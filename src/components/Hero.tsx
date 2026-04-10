@@ -1,5 +1,7 @@
 "use client";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export default function Hero() {
   return (
     <section
@@ -113,7 +115,7 @@ export default function Hero() {
               <div className="relative w-full h-full rounded-3xl overflow-hidden"
                 style={{ background: "#1a1a2e" }}>
                 <img
-                  src="/sami.png"
+                  src={`${basePath}/sami.png`}
                   alt="Sami Khleaf"
                   className="w-full h-full object-cover"
                 />

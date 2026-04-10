@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
-const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
-const isUserPage = repoName.toLowerCase() === "samikh94";
+const [owner = "", repoName = ""] = process.env.GITHUB_REPOSITORY?.split("/") ?? [];
+const isUserPage = repoName.toLowerCase() === `${owner.toLowerCase()}.github.io`;
 const basePath = isGitHubActions && !isUserPage ? `/${repoName}` : "";
 
 const nextConfig = {
@@ -12,6 +12,9 @@ const nextConfig = {
   },
   basePath,
   assetPrefix: basePath || undefined,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
 };
 
 export default nextConfig;

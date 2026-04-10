@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 
 const links = ["About", "Experience", "Projects", "Skills", "Contact"];
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,7 +38,7 @@ export default function Nav() {
           ))}
         </div>
         <a
-          href="/sami-cv.pdf"
+          href={`${basePath}/sami-cv.pdf`}
           className="text-xs font-mono px-4 py-2 rounded-lg border border-violet-500/30 text-violet-400 hover:bg-violet-500/10 hover:border-violet-500/50 transition-all"
         >
           Resume ↗
