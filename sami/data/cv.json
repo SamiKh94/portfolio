@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "person": "sami",
+    "level": "senior",
+    "theme": "colorful"
+  },
+  "header": {
+    "name": "Sami Khleaf",
+    "title": "Android & Flutter Lead",
+    "email": "khleafsami@gmail.com",
+    "phone": "+970 569 320 677",
+    "linkedin": "https://linkedin.com/in/samikleaf",
+    "github": "https://github.com/SamiKh94",
+    "location": "Ramallah, Palestine",
+    "photo": "/sami.png"
+  },
+  "summary": "Senior Mobile Engineer and product architect with 8+ years building large-scale Android and Flutter applications. Leads technical direction across a 5-app production ecosystem at Harri — establishing Flutter as the cross-platform standard, standardizing Clean Architecture, and driving engineering quality across the mobile organization. Founder and technical architect of Tal3a: a multi-vendor logistics marketplace with TSP-inspired routing optimization, AI-native commerce, and a full merchant operations platform.",
+  "coreExpertise": [
+    "Mobile Architecture",
+    "Cross-Platform Systems",
+    "Multi-App Ecosystems",
+    "AI-Assisted Engineering"
+  ],
+  "highlights": [
+    "Spearheaded Flutter Add-to-App adoption at Harri, integrating Flutter modules into native Android apps and establishing it as the cross-platform standard across a 5-app production ecosystem",
+    "Architected MVVM + Clean Architecture across all Harri mobile products and led Java-to-Kotlin migration, standardizing development practices and eliminating technical debt at scale",
+    "Established engineering governance across the mobile organization — architectural reviews, mentoring practices, and cross-functional delivery coordination with Product, Design, Backend, and DevOps",
+    "Founder and technical architect of Tal3a: a multi-vendor logistics marketplace with TSP-inspired routing, AI-native conversational commerce (Al-Haj), and a full merchant operations platform (Tal3a+)"
+  ],
+  "experience": [
+    {
+      "company": "Harri",
+      "role": "Android & Flutter Lead",
+      "period": "Jan 2018 – Present",
+      "location": "Ramallah, Palestine",
+      "bullets": [
+        "Led technical direction across 5 production Android and Flutter apps — TeamLive, HarriLive, HarriHire, TeamHub, and Hob Seeker — owning architecture, quality standards, and release strategy",
+        "Spearheaded Flutter Add-to-App adoption, integrating Flutter modules into existing native codebases and establishing it as the cross-platform standard for all new feature development",
+        "Architected MVVM + Clean Architecture rollout across all products using Android Jetpack, transitioning legacy ad-hoc codebases to a consistent, modular, and testable structure",
+        "Led Java-to-Kotlin migration across legacy codebases, eliminating null-safety vulnerabilities and improving developer velocity across the team; integrated Firebase, AWS Amplify, Cognito (OAuth 2.0), Pusher, and DataDog RUM across the full app ecosystem",
+        "Led AI adoption across the mobile engineering workflow — integrating Cursor IDE and Claude Code, establishing prompt-driven patterns for code generation, analysis, and refactoring, and architecting modular systems that support AI-powered feature integration without re-architecture",
+        "Established architectural review standards and mentoring practices, coordinating delivery across Product, Design, Backend, and DevOps for stable, consistent releases"
+      ]
+    },
+    {
+      "company": "Homyt",
+      "role": "Flutter Lead",
+      "period": "20XX – 20XX",
+      "location": "Palestine",
+      "bullets": [
+        "Led end-to-end Flutter development of Momyt Meet, a location-based social discovery platform — owning architecture decisions, feature delivery, and team direction across 2 years",
+        "Designed real-time social discovery and meetup orchestration flows — anonymous matching, dual-sided activity creation (create/join), and proximity-based user filtering — managing complex multi-user interaction state",
+        "Implemented in-app chat, group-based discount mechanics, and geolocation-based filtering using MVVM + Provider, establishing scalable state management patterns for high-engagement social interactions"
+      ]
+    },
+    {
+      "company": "Curotec",
+      "role": "Flutter Developer",
+      "period": "20XX – 20XX",
+      "location": "Remote",
+      "bullets": [
+        "Owned end-to-end Flutter development of Primefyre — a fire safety inspection platform — architecting the mobile codebase from scratch and designing user flows for structured compliance workflows",
+        "Built form-heavy, workflow-driven features for on-site inspection tracking and safety reporting, translating complex B2B operational requirements into an intuitive field-ready mobile experience",
+        "Applied Clean Architecture principles to ensure a scalable, maintainable codebase capable of supporting expanding inspection and compliance feature sets"
+      ]
+    },
+    {
+      "company": "Yamsafer",
+      "role": "Android Developer",
+      "period": "Dec 2016 – Jan 2018",
+      "location": "Ramallah, Palestine",
+      "bullets": [
+        "Engineered core features for the Yamsafer Android travel app — hotel search, filters, booking flows, and reservation management — using Retrofit and RxJava",
+        "Established unit test coverage for critical booking and networking components, improving release confidence and eliminating recurring production regressions"
+      ]
+    },
+    {
+      "company": "Freelance",
+      "role": "Mobile Developer",
+      "period": "2017 – Present",
+      "location": "Remote",
+      "bullets": [
+        "Delivered end-to-end cross-platform and Android-native applications for clients across e-commerce, productivity, and service domains — owning full development lifecycle from architecture through Play Store deployment using Flutter and React Native"
+      ]
+    }
+  ],
+  "skills": {
+    "Languages": [
+      "Kotlin",
+      "Java",
+      "Dart",
+      "Swift"
+    ],
+    "Mobile & Cross-Platform": [
+      "Flutter",
+      "Android Jetpack",
+      "Flutter Add-to-App",
+      "React Native",
+      "RxJava",
+      "Retrofit",
+      "Dagger / Hilt"
+    ],
+    "Architecture & System Design": [
+      "Clean Architecture",
+      "MVVM",
+      "Modularization",
+      "Repository Pattern",
+      "Multi-App Ecosystem Design"
+    ],
+    "Cloud & Backend Integration": [
+      "Firebase",
+      "AWS Amplify",
+      "Cognito (OAuth 2.0)",
+      "Pusher"
+    ],
+    "Observability & Tooling": [
+      "DataDog RUM",
+      "Google Play Console",
+      "Git"
+    ],
+    "AI-Assisted Engineering": [
+      "Cursor IDE",
+      "Claude Code",
+      "Agentic workflows",
+      "Prompt-driven development",
+      "Context engineering",
+      "LLM feature integration"
+    ]
+  },
+  "projects": [
+    {
+      "name": "Tal3a",
+      "description": "Founder / Mobile Architect — multi-vendor marketplace with logistics optimization",
+      "bullets": [
+        "Architected a multi-vendor e-commerce platform with unified checkout across multiple shops, solving complex order splitting and fulfillment coordination at scale",
+        "Engineered a TSP-inspired logistics model optimizing multi-vendor pickup routing, improving delivery efficiency and operational scalability",
+        "Led end-to-end development of the Flutter mobile ecosystem — customer app and Tal3a+ (merchant operations app) — from system architecture through production release",
+        "Built Al-Haj, an AI-native shopping assistant with conversational product discovery, LLM-driven recommendations, and guided checkout flows",
+        "Engineered vendor onboarding pipelines with bulk import (Excel + S3) and AI-assisted product extraction from WhatsApp inputs, reducing vendor adoption friction",
+        "Delivered a promotions and pricing engine (discounts, flash sales, coupons) with funding splits, validation rules, and commission impact modeling"
+      ],
+      "tech": [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "AI / LLM",
+        "Kotlin"
+      ]
+    },
+    {
+      "name": "Lajnati",
+      "description": "Founder — Mobile-first building & community management platform",
+      "bullets": [
+        "Architected a Flutter mobile platform digitizing residential committee operations — replacing manual processes with structured financial workflows across three access tiers (system admin, building admin, resident)",
+        "Designed a multi-building data hierarchy (Iskan → Building → Residents) with Firebase-backed real-time aggregation powering payment tracking, expense logging, and wallet ledger reporting",
+        "Built RTL-first UI optimized for non-technical committee members, with Clean Architecture enabling independent feature evolution across payment, announcement, and resident management modules"
+      ],
+      "tech": [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "Clean Architecture"
+      ]
+    },
+    {
+      "name": "Jaru",
+      "description": "Personal Project — Pet care & services marketplace",
+      "bullets": [
+        "Built a cross-platform Flutter marketplace connecting pet owners with care providers during COVID-19 lockdowns — delivering multi-role onboarding (owner/provider), social login, and in-app wallet under rapid development constraints",
+        "Designed a scalable service discovery and booking flow with scoped role permissions, laying the architecture for provider-side service management and transaction handling"
+      ],
+      "tech": [
+        "Flutter",
+        "Dart"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor's in Computer Engineering",
+      "school": "Al-Najah National University",
+      "year": "2017",
+      "note": "Nablus, Palestine"
+    }
+  ]
+}

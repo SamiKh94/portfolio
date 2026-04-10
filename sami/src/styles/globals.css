@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Theme tokens ──────────────────────────────────────── */
+:root {
+  --canvas:       #0D0D11;
+  --ink:          #E8E2D4;
+  --ink-dim:      #6B6560;
+  --ink-faint:    #1C1C22;
+  --gold:         #C8A55A;
+  --gold-dim:     rgba(200, 165, 90, 0.18);
+  --gold-subtle:  rgba(200, 165, 90, 0.06);
+  --divider:      rgba(200, 165, 90, 0.14);
+  --font-display: 'Syne', sans-serif;
+  --font-mono:    'IBM Plex Mono', monospace;
+  --font-body:    'DM Sans', sans-serif;
+}
+
+/* ── Print token swap ──────────────────────────────────── */
+@media print {
+  :root {
+    --canvas:      #ffffff;
+    --ink:         #111111;
+    --ink-dim:     #555555;
+    --ink-faint:   #e0e0e0;
+    --gold:        #111111;
+    --gold-dim:    rgba(0, 0, 0, 0.08);
+    --gold-subtle: transparent;
+    --divider:     #cccccc;
+  }
+}
+
+/* ── Base ──────────────────────────────────────────────── */
+@layer base {
+  html {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--canvas);
+    color: var(--ink);
+  }
+}
+
+/* ── Print layout ──────────────────────────────────────── */
+@media print {
+  /* Page 1: edge-to-edge (header fills full bleed) */
+  @page :first {
+    size: A4;
+    margin: 0;
+  }
+
+  /* Page 2+: breathing room at top and bottom */
+  @page {
+    size: A4;
+    margin: 12mm 0 10mm;
+  }
+
+  html, body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Keep headings with the content that follows them */
+  h1, h2, h3, h4 {
+    break-after: avoid;
+  }
+
+  /* Never orphan a single bullet at a page boundary */
+  li {
+    break-inside: avoid;
+  }
+}
