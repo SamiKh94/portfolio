@@ -12,7 +12,9 @@ const description =
   "Engineering leader at Harri: 11 engineers across Android, iOS and Flutter, five apps, 45,000+ daily users. Founder of Tal3a. Open to remote Engineering Manager roles.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  // Origin only: Next prefixes generated image URLs with basePath (/portfolio)
+  // itself, so a metadataBase that already ends in /portfolio would double it.
+  metadataBase: new URL("https://samikh94.github.io"),
   title,
   description,
   alternates: { canonical: siteUrl },
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
     description,
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title,
     description,
   },

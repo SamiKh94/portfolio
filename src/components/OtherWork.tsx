@@ -47,7 +47,7 @@ export default function OtherWork() {
             >
               <div className="flex items-baseline justify-between gap-3 mb-2">
                 <h3 className="text-base font-semibold text-white">{w.name}</h3>
-                <p className="text-[11px] font-mono text-zinc-500 text-right">{w.context}</p>
+                <p className="text-[11px] font-mono text-zinc-400 text-right">{w.context}</p>
               </div>
               <p className="text-sm text-zinc-400 leading-relaxed mb-4">{w.line}</p>
               <div className="mt-auto flex flex-wrap items-center justify-between gap-3">

@@ -13,10 +13,23 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-24 pb-20"
     >
-      {/* Ambient blobs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-violet-600/20 blur-[120px] animate-pulse-glow pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-fuchsia-600/15 blur-[100px] animate-pulse-glow animation-delay-500 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-600/10 blur-[80px] pointer-events-none" />
+      {/* Ambient glows. Radial gradients, not filter: blur(), which cost ~1s of
+          paint on a throttled phone and pushed LCP past 4s. Same footprint as the
+          old blurred circles (box + blur radius), centred on the same points. */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div
+          className="absolute top-1/4 left-1/4 w-[800px] h-[800px] -ml-[150px] -mt-[150px] animate-pulse-glow"
+          style={{ background: "radial-gradient(circle, rgba(124,58,237,0.22) 0%, rgba(124,58,237,0.08) 35%, transparent 65%)" }}
+        />
+        <div
+          className="absolute bottom-1/4 right-1/4 w-[640px] h-[640px] -mr-[120px] -mb-[120px] animate-pulse-glow animation-delay-500"
+          style={{ background: "radial-gradient(circle, rgba(192,38,211,0.16) 0%, rgba(192,38,211,0.06) 35%, transparent 65%)" }}
+        />
+        <div
+          className="absolute top-1/2 left-1/2 w-[460px] h-[460px] -translate-x-1/2 -translate-y-1/2"
+          style={{ background: "radial-gradient(circle, rgba(8,145,178,0.10) 0%, transparent 65%)" }}
+        />
+      </div>
 
       <div className="relative z-10 max-w-5xl mx-auto">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-16">
@@ -104,34 +117,27 @@ export default function Hero() {
             <div
               className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-3xl overflow-hidden"
               style={{
-                background: "linear-gradient(135deg, #7c3aed22, #d946ef22)",
+                // Gradient frame + glow without filter: blur() (paint cost on phones).
+                background: "linear-gradient(135deg, rgba(139,92,246,0.6), rgba(217,70,239,0.6))",
                 padding: "3px",
+                boxShadow: "0 0 48px rgba(139,92,246,0.28)",
               }}
             >
-              <div
-                className="absolute inset-0 rounded-3xl opacity-60"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%)",
-                  filter: "blur(20px)",
-                  transform: "scale(0.9)",
-                }}
-              />
               <div className="relative w-full h-full rounded-3xl overflow-hidden"
                 style={{ background: "#1a1a2e" }}>
+                {/* 448px square WebP = 2x the largest display size (224px). */}
                 <img
-                  src={`${basePath}/sami.png`}
+                  src={`${basePath}/sami-448.webp`}
                   alt="Portrait of Sami Khleaf"
+                  width={448}
+                  height={448}
+                  decoding="async"
+                  fetchPriority="high"
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-          <div className="w-px h-10 bg-gradient-to-b from-violet-500/60 to-transparent" />
         </div>
       </div>
     </section>

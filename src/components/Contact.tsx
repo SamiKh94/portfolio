@@ -43,7 +43,7 @@ export default function Contact() {
             })}
           </div>
 
-          <p className="text-xs font-mono text-zinc-500">
+          <p className="text-xs font-mono text-zinc-400">
             Based in Ramallah, Palestine (UTC+2, UTC+3 in summer)
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function Contact() {
 
       {/* Footer */}
       <div className="mt-20 pt-8 border-t border-white/[0.05] text-center">
-        <p className="text-xs text-zinc-500 font-mono">
+        <p className="text-xs text-zinc-400 font-mono">
           © {new Date().getFullYear()} Sami Khleaf · Built with Next.js & Tailwind
         </p>
       </div>
