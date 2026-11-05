@@ -25,8 +25,8 @@ export default function Contact() {
             Let&apos;s work together
           </h2>
           <p className="text-zinc-500 leading-relaxed mb-12 max-w-lg mx-auto">
-            Open to Engineering Manager and Head of Mobile roles, fully remote or relocation with
-            sponsorship. Email is the fastest way to reach me.
+            Open to Engineering Manager and Head of Mobile roles: fully remote anywhere in the
+            world, or relocation and travel. Email is the fastest way to reach me.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -54,7 +54,7 @@ export default function Contact() {
           </div>
 
           <p className="text-xs font-mono text-zinc-700">
-            Remote · Ramallah (UTC+2)
+            Based in Ramallah, Palestine (UTC+2)
           </p>
         </div>
       </div>

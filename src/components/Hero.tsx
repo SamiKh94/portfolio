@@ -22,7 +22,7 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-2xl sm:rounded-full glass mb-6 animate-fade-in max-w-full">
               <span className="w-2 h-2 shrink-0 rounded-full bg-emerald-400 animate-pulse" />
               <span className="text-xs font-mono text-zinc-400 tracking-wider text-left">
-                Open to Engineering Manager and Head of Mobile roles · Remote, Ramallah (UTC+2)
+                Open to Engineering Manager and Head of Mobile roles · Remote worldwide, relocation or travel
               </span>
             </div>
 
