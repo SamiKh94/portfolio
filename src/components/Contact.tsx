@@ -5,9 +5,10 @@ import { cvHref } from "@/lib/sections";
 
 const links = [
   { label: "Email", value: "khleafsami@gmail.com", href: "mailto:khleafsami@gmail.com", color: "#a78bfa" },
+  { label: "WhatsApp", value: "+970 569 320 677", href: "https://wa.me/970569320677", color: "#4ade80" },
   { label: "LinkedIn", value: "linkedin.com/in/samikhleaf", href: "https://www.linkedin.com/in/samikhleaf", color: "#22d3ee" },
   { label: "GitHub", value: "github.com/SamiKh94", href: "https://github.com/SamiKh94", color: "#34d399" },
-  { label: "CV", value: "Download PDF", href: cvHref, color: "#fb923c" },
+  { label: "CV", value: "Download PDF", href: cvHref, color: "#fb923c", wide: true },
 ];
 
 export default function Contact() {
@@ -23,17 +24,19 @@ export default function Contact() {
           <SectionHeader id="contact" inView={inView} center />
           <p className="text-zinc-400 leading-relaxed -mt-8 mb-12 max-w-lg mx-auto">
             Open to Engineering Manager and Head of Mobile roles: fully remote anywhere in the
-            world, or relocation and travel. Email is the fastest way to reach me.
+            world, or relocation and travel. Email or WhatsApp is the fastest way to reach me.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4 mb-12 text-left">
-            {links.map(({ label, value, href, color }, i) => (
+            {links.map((link, i) => {
+              const { label, value, href, color } = link;
+              return (
               <a
                 key={label}
                 href={href}
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
                 rel="noopener noreferrer"
-                className="glass glass-hover rounded-2xl px-6 py-4 text-left group min-w-0"
+                className={`glass glass-hover rounded-2xl px-6 py-4 text-left group min-w-0${"wide" in link ? " sm:col-span-2" : ""}`}
                 style={{
                   opacity: inView ? 1 : 0,
                   transform: inView ? "translateY(0)" : "translateY(20px)",
@@ -47,7 +50,8 @@ export default function Contact() {
                   {value}
                 </div>
               </a>
-            ))}
+              );
+            })}
           </div>
 
           <p className="text-xs font-mono text-zinc-500">
