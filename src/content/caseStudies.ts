@@ -41,7 +41,7 @@ export const caseStudies: CaseStudy[] = [
     company: "Harri",
     title: "Two apps into one",
     question: "Can you lead a big change without breaking things?",
-    approved: false,
+    approved: true, // approved by Sami 2026-11-06
     parts: {
       situation:
         "Harri had two live production apps covering mostly the same functionality and areas, but for different personas. Managing the work in one app is easier than managing it across several, so the business needed them merged.",
@@ -50,10 +50,8 @@ export const caseStudies: CaseStudy[] = [
       team:
         "It was me and two other engineers, and the syncing was a lot. We converted the apps into git modules and modified their architecture to match the modular architecture we built. What made it manageable was AI with a project knowledge layer: an architecture blueprint of what goes where, plus a mapping for how to resolve conflicts.",
       outcome: "Two distinct apps with app switching became one app with persona switching.",
-      // Proposed from Sami's own answer ("the syncing was so much ... till we utilized AI
-      // and project knowledge layer"). Awaiting Sami's confirmation; keep approved: false until then.
       differently:
-        "I'd build the project knowledge layer first, before the syncing started, instead of partway through. Most of the pain was syncing before we had it.",
+        "I'd put more time into R&D and analysis before we started moving code: mapping the unfinished work in both apps and where the conflicts would come from. We worked a lot of that out while syncing.",
     },
   },
   {
