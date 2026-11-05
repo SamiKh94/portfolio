@@ -1,5 +1,6 @@
 "use client";
 import { useInView } from "@/lib/useInView";
+import { reveal } from "@/lib/reveal";
 import SectionHeader from "@/components/SectionHeader";
 import StoreLinks, { type StoreLink } from "@/components/StoreLinks";
 
@@ -47,11 +48,7 @@ export default function OtherWork() {
             <li
               key={w.name}
               className="glass glass-hover rounded-2xl p-5 flex flex-col"
-              style={{
-                opacity: inView ? 1 : 0,
-                transform: inView ? "translateY(0)" : "translateY(20px)",
-                transition: `opacity 0.6s ease ${i * 0.08}s, transform 0.6s ease ${i * 0.08}s, background 0.2s, border-color 0.2s`,
-              }}
+              {...reveal(inView, i * 0.08)}
             >
               <div className="flex items-baseline justify-between gap-3 mb-2">
                 <h3 className="text-base font-semibold text-white">{w.name}</h3>
