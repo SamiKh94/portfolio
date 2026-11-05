@@ -91,7 +91,7 @@ export default function Experience() {
                     {job.company}
                   </span>
                   <h3 className="text-lg font-semibold text-white">{job.role}</h3>
-                  <p className="text-xs text-zinc-500 mt-1">{job.context}</p>
+                  <p className="text-xs text-zinc-400 mt-1">{job.context}</p>
                 </div>
                 <p className="text-xs font-mono text-zinc-400 sm:text-right flex-shrink-0">{job.period}</p>
               </div>

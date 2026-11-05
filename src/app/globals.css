@@ -34,8 +34,8 @@ body {
   .glass {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.07);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    /* No backdrop-filter: cards sit on a flat background, so it blurred nothing
+       while costing a compositing layer per card on phones. */
   }
 
   .glass-hover {
@@ -71,3 +71,13 @@ body {
 @media print {
   *, *::before, *::after { animation: none !important; }
 }
+
+/* Keyboard focus: visible on every interactive element, never on mouse click. */
+:where(a, button, summary, [tabindex]):focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 3px;
+  border-radius: 0.5rem;
+}
+
+/* Anchor jumps land below the fixed 56px nav. */
+section[id] { scroll-margin-top: 3.5rem; }
