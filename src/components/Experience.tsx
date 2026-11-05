@@ -1,5 +1,3 @@
-"use client";
-import { useInView } from "@/lib/useInView";
 import SectionHeader from "@/components/SectionHeader";
 import StoreLinks, { type StoreLink } from "@/components/StoreLinks";
 
@@ -52,8 +50,8 @@ const jobs: Job[] = [
     accent: "#d946ef",
     bullets: [
       "Took it from idea to a live marketplace on both app stores, taking real orders. I write the product specs and flows, own architecture and mobile, and lead a backend and a frontend engineer.",
-      "Owned growth: merchant acquisition through a field sales playbook and direct outreach, user acquisition beyond paid ads, and retention through a loyalty programme where daily streaks became the main reason people came back.",
-      "Built Al-Haj, an AI shopping assistant that works like asking the person behind the counter: it knows your size and preferences, suggests outfits, and understands Palestinian dialect. Rolling out soon.",
+      "Owned growth: merchant acquisition through a field sales playbook and direct outreach, user acquisition beyond paid ads, and retention through a loyalty programme where daily streaks turned out to be what brought people back.",
+      "Built Al-Haj, an AI shopping assistant that works like asking the person behind the counter: it knows your size and preferences, suggests outfits, and understands Palestinian dialect. Launching soon.",
     ],
     links: [
       { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.tal3a.app.tal3a" },
@@ -73,23 +71,17 @@ const jobs: Job[] = [
 ];
 
 export default function Experience() {
-  const { ref, inView } = useInView(0.05);
 
   return (
     <section id="experience" className="py-28 px-6 scroll-mt-14">
-      <div className="max-w-4xl mx-auto" ref={ref}>
-        <SectionHeader id="experience" inView={inView} />
+      <div className="max-w-4xl mx-auto">
+        <SectionHeader id="experience" />
 
         <ol className="space-y-6">
           {jobs.map((job, i) => (
             <li
               key={job.company}
               className="glass rounded-2xl p-6 sm:p-8"
-              style={{
-                opacity: inView ? 1 : 0,
-                transform: inView ? "translateY(0)" : "translateY(20px)",
-                transition: `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s`,
-              }}
             >
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 sm:gap-6 mb-4">
                 <div>

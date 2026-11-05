@@ -54,5 +54,20 @@ body {
   .animation-delay-500 { animation-delay: 0.5s; }
   .animation-delay-700 { animation-delay: 0.7s; }
 
-  .opacity-0-init { opacity: 0; }
+}
+
+/* Hero entrance: CSS-only, and the keyframes' "from" state is applied by
+   animation-fill-mode (see tailwind.config.ts), never by a class in the HTML.
+   So anything that doesn't run CSS animations still renders the text, and
+   reduced motion / print skip the animation entirely. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media print {
+  *, *::before, *::after { animation: none !important; }
 }

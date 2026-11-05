@@ -1,5 +1,3 @@
-"use client";
-import { useInView } from "@/lib/useInView";
 import SectionHeader from "@/components/SectionHeader";
 import StoreLinks, { type StoreLink } from "@/components/StoreLinks";
 
@@ -35,23 +33,17 @@ const work: { name: string; context: string; line: string; tech: string[]; links
 ];
 
 export default function OtherWork() {
-  const { ref, inView } = useInView();
 
   return (
     <section id="other-work" className="py-28 px-6 scroll-mt-14">
-      <div className="max-w-5xl mx-auto" ref={ref}>
-        <SectionHeader id="other-work" inView={inView} />
+      <div className="max-w-5xl mx-auto">
+        <SectionHeader id="other-work" />
 
         <ul className="grid sm:grid-cols-2 gap-4">
           {work.map((w, i) => (
             <li
               key={w.name}
               className="glass glass-hover rounded-2xl p-5 flex flex-col"
-              style={{
-                opacity: inView ? 1 : 0,
-                transform: inView ? "translateY(0)" : "translateY(20px)",
-                transition: `opacity 0.6s ease ${i * 0.08}s, transform 0.6s ease ${i * 0.08}s, background 0.2s, border-color 0.2s`,
-              }}
             >
               <div className="flex items-baseline justify-between gap-3 mb-2">
                 <h3 className="text-base font-semibold text-white">{w.name}</h3>

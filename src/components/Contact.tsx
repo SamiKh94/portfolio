@@ -1,5 +1,3 @@
-"use client";
-import { useInView } from "@/lib/useInView";
 import SectionHeader from "@/components/SectionHeader";
 import { cvHref } from "@/lib/sections";
 
@@ -12,16 +10,12 @@ const links = [
 ];
 
 export default function Contact() {
-  const { ref, inView } = useInView();
 
   return (
     <section id="contact" className="py-28 px-6 scroll-mt-14">
       <div className="max-w-3xl mx-auto text-center">
-        <div
-          ref={ref}
-          className={`transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-        >
-          <SectionHeader id="contact" inView={inView} center />
+        <div>
+          <SectionHeader id="contact" center />
           <p className="text-zinc-400 leading-relaxed -mt-8 mb-12 max-w-lg mx-auto">
             Open to Engineering Manager and Head of Mobile roles: fully remote anywhere in the
             world, or relocation and travel. Email or WhatsApp is the fastest way to reach me.
@@ -37,11 +31,6 @@ export default function Contact() {
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
                 rel="noopener noreferrer"
                 className={`glass glass-hover rounded-2xl px-6 py-4 text-left group min-w-0${"wide" in link ? " sm:col-span-2" : ""}`}
-                style={{
-                  opacity: inView ? 1 : 0,
-                  transform: inView ? "translateY(0)" : "translateY(20px)",
-                  transition: `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s, background 0.2s, border-color 0.2s`,
-                }}
               >
                 <div className="text-[10px] font-mono tracking-widest mb-1" style={{ color }}>
                   {label.toUpperCase()}
@@ -55,7 +44,7 @@ export default function Contact() {
           </div>
 
           <p className="text-xs font-mono text-zinc-500">
-            Based in Ramallah, Palestine (UTC+2)
+            Based in Ramallah, Palestine (UTC+2, UTC+3 in summer)
           </p>
         </div>
       </div>
