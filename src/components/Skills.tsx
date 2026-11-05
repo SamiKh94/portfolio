@@ -1,54 +1,56 @@
 "use client";
 import { useInView } from "@/lib/useInView";
+import SectionHeader from "@/components/SectionHeader";
 
+// Same groups and order as the CV. Leadership and product come first on purpose.
 const groups = [
   {
-    label: "Languages",
-    color: "from-blue-500 to-indigo-500",
-    bg: "rgba(99,102,241,0.1)",
-    border: "rgba(99,102,241,0.25)",
-    text: "#818cf8",
-    items: ["Kotlin", "Java", "Dart", "Swift"],
-  },
-  {
-    label: "Mobile & Cross-Platform",
-    color: "from-cyan-500 to-teal-500",
-    bg: "rgba(6,182,212,0.1)",
-    border: "rgba(6,182,212,0.25)",
-    text: "#22d3ee",
-    items: ["Flutter", "Android Jetpack", "Flutter Add-to-App", "React Native", "RxJava", "Retrofit", "Dagger / Hilt"],
-  },
-  {
-    label: "Architecture & System Design",
-    color: "from-orange-500 to-amber-500",
-    bg: "rgba(249,115,22,0.1)",
-    border: "rgba(249,115,22,0.25)",
-    text: "#fb923c",
-    items: ["Clean Architecture", "MVVM", "Modularization", "Repository Pattern", "Multi-App Ecosystem Design"],
-  },
-  {
-    label: "Cloud & Backend Integration",
+    label: "Leadership",
     color: "from-violet-500 to-purple-500",
     bg: "rgba(139,92,246,0.1)",
     border: "rgba(139,92,246,0.25)",
     text: "#a78bfa",
-    items: ["Firebase", "AWS Amplify", "Cognito (OAuth 2.0)", "Pusher"],
+    items: ["People management", "Hiring", "Performance reviews", "Career development", "Delegation", "Cross-functional delivery with product, design, backend and QA"],
   },
   {
-    label: "Observability & Tooling",
-    color: "from-amber-500 to-yellow-500",
-    bg: "rgba(245,158,11,0.1)",
-    border: "rgba(245,158,11,0.25)",
-    text: "#fbbf24",
-    items: ["DataDog RUM", "Google Play Console", "Git"],
+    label: "Product and growth",
+    color: "from-fuchsia-500 to-pink-500",
+    bg: "rgba(217,70,239,0.1)",
+    border: "rgba(217,70,239,0.25)",
+    text: "#e879f9",
+    items: ["Merchant and user acquisition", "Referral and loyalty mechanics", "Retention through streaks", "Arabic-first and RTL UX"],
   },
   {
-    label: "AI-Assisted Engineering",
+    label: "Android",
     color: "from-emerald-500 to-green-500",
     bg: "rgba(16,185,129,0.1)",
     border: "rgba(16,185,129,0.25)",
     text: "#34d399",
-    items: ["Cursor IDE", "Claude Code", "Agentic workflows", "Prompt-driven development", "Context engineering", "LLM feature integration"],
+    items: ["Kotlin", "Jetpack Compose", "Hilt", "Room", "LiveData", "Coroutines", "Play Console staged rollouts", "Remote-config feature flags"],
+  },
+  {
+    label: "Cross-platform",
+    color: "from-cyan-500 to-teal-500",
+    bg: "rgba(6,182,212,0.1)",
+    border: "rgba(6,182,212,0.25)",
+    text: "#22d3ee",
+    items: ["Flutter", "Dart", "Flutter Add-to-App", "Riverpod", "Firebase"],
+  },
+  {
+    label: "Architecture",
+    color: "from-orange-500 to-amber-500",
+    bg: "rgba(249,115,22,0.1)",
+    border: "rgba(249,115,22,0.25)",
+    text: "#fb923c",
+    items: ["Multi-module clean architecture", "MVVM", "Large-codebase modularization", "Migration of live products"],
+  },
+  {
+    label: "AI and tooling",
+    color: "from-amber-500 to-yellow-500",
+    bg: "rgba(245,158,11,0.1)",
+    border: "rgba(245,158,11,0.25)",
+    text: "#fbbf24",
+    items: ["Agentic engineering workflows on Claude Code", "LLM features: retrieval, tool calling, agent memory"],
   },
 ];
 
@@ -56,19 +58,10 @@ export default function Skills() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="skills" className="py-28 px-6">
+    <section id="skills" className="py-28 px-6 scroll-mt-14">
       <div className="max-w-5xl mx-auto">
         <div ref={ref}>
-          <p
-            className={`text-xs font-mono text-violet-400 tracking-widest uppercase mb-3 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-          >
-            05 / What I work with
-          </p>
-          <h2
-            className={`text-3xl sm:text-4xl font-bold text-white mb-12 transition-all duration-700 delay-100 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
-          >
-            Skills
-          </h2>
+          <SectionHeader id="skills" inView={inView} />
 
           <div className="grid md:grid-cols-2 gap-4">
             {groups.map((g, i) => (
@@ -83,7 +76,7 @@ export default function Skills() {
               >
                 <div className="flex items-center gap-2 mb-3">
                   <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${g.color} flex-shrink-0`} />
-                  <span className="text-xs font-semibold text-zinc-400 tracking-wide">{g.label}</span>
+                  <h3 className="text-xs font-semibold text-zinc-300 tracking-wide">{g.label}</h3>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   {g.items.map((item) => (
