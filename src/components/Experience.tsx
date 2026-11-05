@@ -1,6 +1,3 @@
-"use client";
-import { useInView } from "@/lib/useInView";
-import { reveal } from "@/lib/reveal";
 import SectionHeader from "@/components/SectionHeader";
 import StoreLinks, { type StoreLink } from "@/components/StoreLinks";
 
@@ -74,19 +71,17 @@ const jobs: Job[] = [
 ];
 
 export default function Experience() {
-  const { ref, inView } = useInView(0.05);
 
   return (
     <section id="experience" className="py-28 px-6 scroll-mt-14">
-      <div className="max-w-4xl mx-auto" ref={ref}>
-        <SectionHeader id="experience" inView={inView} />
+      <div className="max-w-4xl mx-auto">
+        <SectionHeader id="experience" />
 
         <ol className="space-y-6">
           {jobs.map((job, i) => (
             <li
               key={job.company}
               className="glass rounded-2xl p-6 sm:p-8"
-              {...reveal(inView, i * 0.1)}
             >
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 sm:gap-6 mb-4">
                 <div>

@@ -1,6 +1,3 @@
-"use client";
-import { useInView } from "@/lib/useInView";
-import { reveal } from "@/lib/reveal";
 import SectionHeader from "@/components/SectionHeader";
 
 // Same groups and order as the CV. Leadership and product come first on purpose.
@@ -56,20 +53,18 @@ const groups = [
 ];
 
 export default function Skills() {
-  const { ref, inView } = useInView();
 
   return (
     <section id="skills" className="py-28 px-6 scroll-mt-14">
       <div className="max-w-5xl mx-auto">
-        <div ref={ref}>
-          <SectionHeader id="skills" inView={inView} />
+        <div>
+          <SectionHeader id="skills" />
 
           <div className="grid md:grid-cols-2 gap-4">
             {groups.map((g, i) => (
               <div
                 key={g.label}
                 className="glass glass-hover rounded-2xl p-5"
-                {...reveal(inView, i * 0.08)}
               >
                 <div className="flex items-center gap-2 mb-3">
                   <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${g.color} flex-shrink-0`} />

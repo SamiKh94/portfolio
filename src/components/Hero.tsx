@@ -1,11 +1,10 @@
-"use client";
 import { basePath, cvHref } from "@/lib/sections";
 
 // Every figure here is on the CV. Do not add numbers that are not.
 const stats = [
-  { value: "11", label: "Engineers led", detail: "Up to 8 direct reports, Android, iOS and Flutter" },
-  { value: "45,000+", label: "Daily users", detail: "Across five production apps" },
-  { value: "10 yrs", label: "In mobile", detail: "Since December 2016" },
+  { value: "11", label: "Engineers led", short: "Up to 8 direct reports", detail: "Up to 8 direct reports, Android, iOS and Flutter" },
+  { value: "45,000+", label: "Daily users", short: "Five production apps", detail: "Across five production apps" },
+  { value: "10 yrs", label: "In mobile", short: "Since Dec 2016", detail: "Since December 2016" },
 ];
 
 export default function Hero() {
@@ -33,7 +32,7 @@ export default function Hero() {
             </div>
 
             {/* Name */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.0] mb-4 animate-slide-up animation-delay-100 opacity-0">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.0] mb-4 animate-slide-up animation-delay-100">
               <span
                 className="text-gradient bg-gradient-to-r"
                 style={{
@@ -49,10 +48,10 @@ export default function Hero() {
             </h1>
 
             {/* Title line */}
-            <p className="text-xl sm:text-2xl text-white font-semibold mb-2 animate-slide-up animation-delay-200 opacity-0">
+            <p className="text-xl sm:text-2xl text-white font-semibold mb-2 animate-slide-up animation-delay-200">
               Engineering leader, mobile and product
             </p>
-            <p className="text-base sm:text-lg text-zinc-400 mb-8 animate-slide-up animation-delay-300 opacity-0">
+            <p className="text-base sm:text-lg text-zinc-400 mb-8 animate-slide-up animation-delay-300">
               <span className="block sm:inline sm:whitespace-nowrap">
                 Android | Flutter Lead at <span className="text-violet-300 font-medium">Harri</span>
               </span>
@@ -63,7 +62,7 @@ export default function Hero() {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start animate-slide-up animation-delay-400 opacity-0">
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start animate-slide-up animation-delay-400">
               <a
                 href={cvHref}
                 download="Sami-Khleaf-CV.pdf"
@@ -84,14 +83,17 @@ export default function Hero() {
             </div>
 
             {/* Proof stats */}
-            <ul className="grid grid-cols-3 gap-2 sm:gap-3 mt-10 max-w-lg mx-auto md:mx-0 animate-fade-in animation-delay-700 opacity-0">
-              {stats.map(({ value, label, detail }) => (
-                <li key={label} className="glass rounded-xl px-3 py-3 text-center md:text-left">
+            <ul className="grid grid-cols-3 gap-2 sm:gap-3 mt-10 max-w-lg mx-auto md:mx-0 animate-fade-in animation-delay-700">
+              {stats.map(({ value, label, short, detail }) => (
+                <li key={label} className="glass rounded-xl px-2 sm:px-3 py-3 text-center md:text-left">
                   <p className="text-lg sm:text-xl font-bold text-white">{value}</p>
                   <p className="text-[10px] text-zinc-400 tracking-wide uppercase font-mono mt-0.5">
                     {label}
                   </p>
-                  <p className="hidden sm:block text-[11px] text-zinc-500 leading-snug mt-1">{detail}</p>
+                  <p className="text-[11px] text-zinc-400 leading-snug mt-1">
+                    <span className="sm:hidden">{short}</span>
+                    <span className="hidden sm:inline">{detail}</span>
+                  </p>
                 </li>
               ))}
             </ul>

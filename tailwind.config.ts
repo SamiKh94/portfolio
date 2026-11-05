@@ -12,9 +12,9 @@ const config: Config = {
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       animation: {
-        "fade-in": "fadeIn 0.8s ease-out forwards",
-        "slide-up": "slideUp 0.8s ease-out forwards",
-        "slide-right": "slideRight 0.7s ease-out forwards",
+        "fade-in": "fadeIn 0.8s ease-out both",
+        "slide-up": "slideUp 0.8s ease-out both",
+        "slide-right": "slideRight 0.7s ease-out both",
         float: "float 6s ease-in-out infinite",
         "pulse-glow": "pulseGlow 3s ease-in-out infinite",
         "gradient-shift": "gradientShift 6s ease infinite",

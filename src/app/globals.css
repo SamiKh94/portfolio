@@ -56,39 +56,18 @@ body {
 
 }
 
-/* ── Scroll reveal ─────────────────────────────────────────────────────────
-   Visible by default. Hidden-until-in-view only applies once the boot script
-   in lib/reveal.ts has added .reveal-ready to <html>. */
-.reveal-ready [data-reveal] {
-  transition:
-    opacity 0.6s ease var(--reveal-delay, 0s),
-    transform 0.6s ease var(--reveal-delay, 0s),
-    background 0.2s,
-    border-color 0.2s;
-}
-.reveal-ready [data-reveal="out"] {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-/* Hero entrance uses CSS animations (no JS needed). Under reduced motion or in
-   print, skip every animation and show the final state. */
+/* Hero entrance: CSS-only, and the keyframes' "from" state is applied by
+   animation-fill-mode (see tailwind.config.ts), never by a class in the HTML.
+   So anything that doesn't run CSS animations still renders the text, and
+   reduced motion / print skip the animation entirely. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;
   }
-  .animate-fade-in, .animate-slide-up, .animate-slide-right {
-    opacity: 1 !important;
-    transform: none !important;
-  }
 }
 
 @media print {
-  [data-reveal], .animate-fade-in, .animate-slide-up, .animate-slide-right {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-  }
+  *, *::before, *::after { animation: none !important; }
 }

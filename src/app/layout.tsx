@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import { revealBootScript } from "@/lib/reveal";
 import "./globals.css";
 
 // Self-hosted at build time, so the static export has no runtime font requests.
@@ -33,11 +32,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${mono.variable}`} suppressHydrationWarning>
-      <head>
-        {/* Runs before first paint; see lib/reveal.ts. */}
-        <script dangerouslySetInnerHTML={{ __html: revealBootScript }} />
-      </head>
+    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
       <body className="font-sans">{children}</body>
     </html>
   );
