@@ -43,23 +43,17 @@ export const caseStudies: CaseStudy[] = [
     question: "Can you lead a big change without breaking things?",
     approved: false,
     parts: {
-      situation: {
-        needs:
-          "Harri had two live production apps on plain MVVM, used by frontline hospitality teams during their shifts. Why did they need to become one, and roughly when (year, how long it took)?",
-      },
-      decision: {
-        needs:
-          "We merged them into one modular app on multi-module clean architecture, and the hard part was deciding which flows survived. What is one decision you argued for, and what was the alternative?",
-      },
-      team: {
-        needs:
-          "How many engineers worked on it, and how did you split the work and keep both apps shipping while the merge was in progress?",
-      },
-      outcome: {
-        needs:
-          "One modular app, without breaking users' trust mid-shift. What changed for the team or for users afterwards? Only facts you can say publicly; no internal metrics.",
-      },
-      differently: { needs: "What would you do differently if you ran this merge again?" },
+      situation:
+        "Harri had two live production apps covering mostly the same functionality and areas, but for different personas. Managing the work in one app is easier than managing it across several, so the business needed them merged.",
+      decision:
+        "The initial direction was to copy and paste the code into one app as normal packages. I refused. The first challenge was the architecture: this was the moment to apply something new, a modular architecture, not to carry the old structure over. And both original apps still had unfinished work that needed syncing into the new app, so we used git submodules to keep it in step.",
+      team:
+        "It was me and two other engineers, and the syncing was a lot. We converted the apps into git modules and modified their architecture to match the modular architecture we built. What made it manageable was AI with a project knowledge layer: an architecture blueprint of what goes where, plus a mapping for how to resolve conflicts.",
+      outcome: "Two distinct apps with app switching became one app with persona switching.",
+      // Proposed from Sami's own answer ("the syncing was so much ... till we utilized AI
+      // and project knowledge layer"). Awaiting Sami's confirmation; keep approved: false until then.
+      differently:
+        "I'd build the project knowledge layer first, before the syncing started, instead of partway through. Most of the pain was syncing before we had it.",
     },
   },
   {
@@ -67,7 +61,7 @@ export const caseStudies: CaseStudy[] = [
     company: "Tal3a",
     title: "The loop, from the losing side",
     question: "Can you own a product outcome, not just code?",
-    approved: false,
+    approved: true, // approved by Sami 2026-11-06
     parts: {
       situation:
         "I took Tal3a from an idea to a live marketplace on both app stores, taking real orders. The product worked. Getting people to it was the hard part: getting their attention is hard, ads and marketing are not enough, they need something new.",
@@ -77,10 +71,8 @@ export const caseStudies: CaseStudy[] = [
         "I researched and wrote the product specs and flows, owned architecture and mobile, and led a backend and a frontend engineer through implementation. Merchants came in through a field sales playbook and direct outreach.",
       outcome:
         "Loyalty, discounts and gifts were part of it, but the streak was the real one: daily streaks turned out to be what brought people back.",
-      differently: {
-        needs:
-          "The lesson on your CV is that distribution, not the product, was the constraint. In your words: what would you do differently, and what would you do first?",
-      },
+      differently:
+        "We shipped a product that worked and learned that distribution, not the product, was the constraint. I'd prepare everything needed to raise money early, because funding was a big limitation, and I'd look much more carefully at sales and marketing.",
     },
   },
   {
@@ -88,21 +80,18 @@ export const caseStudies: CaseStudy[] = [
     company: "Harri",
     title: "Agents with a human in charge",
     question: "How do you use AI without losing quality?",
-    approved: false,
+    approved: true, // approved by Sami 2026-11-06
     parts: {
-      situation: {
-        needs:
-          "What was the problem or moment that made you build a team workflow, rather than everyone using AI tools on their own?",
-      },
+      situation:
+        "I wanted to standardise how the team works: one unified workflow for our daily tasks, while maintaining quality.",
       decision:
         "Build it as shared team infrastructure, not personal productivity, with one rule: people review and own every change, and agents do not merge.",
       team:
         "A plugin marketplace of Claude Code skills the group uses daily, automated API contract checks between mobile and backend, and feature verification as two agent sessions: one implements, and a separate one drives real devices and reports what it observed.",
-      outcome: {
-        needs:
-          "One concrete bug the device verification caught, described accurately, and how the team's way of working changed. No measured figures (bug counts, time saved) unless they exist.",
-      },
-      differently: { needs: "What would you do differently?" },
+      outcome:
+        "The group uses it every day. The daily task workflow is the same across the team, and every change is still reviewed and owned by a person.",
+      differently:
+        "I'd ship it as a plugin in the company marketplace, with more conventions and standards built in, to make all our lives easier.",
     },
   },
 ];
