@@ -1,8 +1,9 @@
 import SectionHeader from "@/components/SectionHeader";
 
-// Sami's own words from the 5 Nov interview. Fix spelling only; do not polish.
+// Chosen by Sami (6 Nov). Every claim is on the CV: hiring, growing people
+// (reviews, promotions), delegating ownership, taking the hard calls.
 const quote =
-  "I see myself as an enabler, and I hear a lot that I enable the work to move forward. What I'm proudest of is that I delegate the work to my team, and they're up to it.";
+  "I hire, I grow people, and I hand over real ownership. The hard calls I keep for myself.";
 
 const points = [
   {
