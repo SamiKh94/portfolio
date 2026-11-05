@@ -19,10 +19,10 @@ export default function Hero() {
           {/* Text */}
           <div className="flex-1 text-center md:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass mb-6 animate-fade-in">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-xs font-mono text-zinc-400 tracking-wider">
-                Available for senior roles
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-2xl sm:rounded-full glass mb-6 animate-fade-in max-w-full">
+              <span className="w-2 h-2 shrink-0 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-xs font-mono text-zinc-400 tracking-wider text-left">
+                Open to Engineering Manager and Head of Mobile roles · Remote, Ramallah (UTC+2)
               </span>
             </div>
 
@@ -51,7 +51,7 @@ export default function Hero() {
 
             {/* Tagline */}
             <p className="text-zinc-500 text-base leading-relaxed max-w-lg mb-8 animate-slide-up animation-delay-300 opacity-0">
-              8+ years building production Android and Flutter applications at scale.
+              10 years building production Android and Flutter applications at scale.
               Founder of{" "}
               <span className="text-violet-300 font-medium">Tal3a</span> — a multi-vendor
               logistics marketplace with AI-native commerce.
@@ -80,7 +80,7 @@ export default function Hero() {
             {/* Stat chips */}
             <div className="flex flex-wrap gap-3 mt-10 justify-center md:justify-start animate-fade-in animation-delay-700 opacity-0">
               {[
-                { label: "Years exp.", value: "8+" },
+                { label: "Years in mobile", value: "10" },
                 { label: "Production apps", value: "5" },
                 { label: "Own product", value: "Tal3a" },
               ].map(({ label, value }) => (

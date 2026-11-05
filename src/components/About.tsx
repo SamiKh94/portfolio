@@ -19,8 +19,8 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div className="space-y-4 text-zinc-400 leading-relaxed">
               <p>
-                I'm a <span className="text-white font-medium">Senior Mobile Engineer</span> and
-                product architect based in Ramallah, Palestine, with 8+ years building large-scale
+                I'm an <span className="text-white font-medium">engineering leader, mobile and
+                product</span>, based in Ramallah, Palestine, with 10 years building large-scale
                 Android and Flutter applications.
               </p>
               <p>

@@ -3,7 +3,7 @@ import { useInView } from "@/lib/useInView";
 
 const links = [
   { label: "Email", value: "khleafsami@gmail.com", href: "mailto:khleafsami@gmail.com", color: "#a78bfa" },
-  { label: "LinkedIn", value: "linkedin.com/in/samikleaf", href: "https://linkedin.com/in/samikleaf", color: "#22d3ee" },
+  { label: "LinkedIn", value: "linkedin.com/in/samikhleaf", href: "https://www.linkedin.com/in/samikhleaf", color: "#22d3ee" },
   { label: "GitHub", value: "github.com/SamiKh94", href: "https://github.com/SamiKh94", color: "#34d399" },
 ];
 
@@ -25,8 +25,8 @@ export default function Contact() {
             Let&apos;s work together
           </h2>
           <p className="text-zinc-500 leading-relaxed mb-12 max-w-lg mx-auto">
-            Open to senior and staff-level mobile engineering roles. Reach out directly or connect
-            on LinkedIn.
+            Open to Engineering Manager and Head of Mobile roles, fully remote or relocation with
+            sponsorship. Email is the fastest way to reach me.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -54,7 +54,7 @@ export default function Contact() {
           </div>
 
           <p className="text-xs font-mono text-zinc-700">
-            Ramallah, Palestine · Available for remote roles worldwide
+            Remote · Ramallah (UTC+2)
           </p>
         </div>
       </div>
