@@ -1,8 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-
-const links = ["About", "Experience", "Projects", "Skills", "Contact"];
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+import { sections, cvHref } from "@/lib/sections";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,21 +25,23 @@ export default function Nav() {
           SK
         </a>
         <div className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
+          {sections.map((s) => (
             <a
-              key={l}
-              href={`#${l.toLowerCase()}`}
+              key={s.id}
+              href={`#${s.id}`}
               className="text-sm text-zinc-400 hover:text-white transition-colors tracking-wide"
             >
-              {l}
+              {s.nav}
             </a>
           ))}
         </div>
         <a
-          href={`${basePath}/sami-cv.pdf`}
+          href={cvHref}
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-xs font-mono px-4 py-2 rounded-lg border border-violet-500/30 text-violet-400 hover:bg-violet-500/10 hover:border-violet-500/50 transition-all"
         >
-          Resume ↗
+          CV ↗
         </a>
       </div>
     </nav>
