@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { GOATCOUNTER_ENDPOINT, GOATCOUNTER_SCRIPT } from "@/lib/analytics";
 import "./globals.css";
 
 // Self-hosted at build time, so the static export has no runtime font requests.
@@ -35,6 +36,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${mono.variable}`}>
+      <head>
+        {/* Analytics: see src/lib/analytics.ts. Async, cookie-free, ~3.5 KB gzipped. */}
+        <script data-goatcounter={GOATCOUNTER_ENDPOINT} async src={GOATCOUNTER_SCRIPT} />
+      </head>
       <body className="font-sans">{children}</body>
     </html>
   );

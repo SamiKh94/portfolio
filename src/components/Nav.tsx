@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { sections, cvHref } from "@/lib/sections";
+import { track } from "@/lib/analytics";
 
 // Mobile menu is a native <details>, so it opens and closes without JavaScript
 // and is keyboard-operable by default. The effects below only add niceties:
@@ -79,6 +80,7 @@ export default function Nav() {
         <div className="flex items-center gap-2">
           <a
             href={cvHref}
+            {...track("cv", "nav")}
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs font-mono px-4 py-2 rounded-lg border border-violet-500/30 text-violet-300 hover:bg-violet-500/10 hover:border-violet-500/50 transition-all"

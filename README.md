@@ -42,6 +42,16 @@ Push to `main`. `.github/workflows/deploy.yml` builds the export and publishes `
 | Favicon, touch icon, link-preview image | `src/app/favicon.ico`, `icon.png`, `apple-icon.png`, `opengraph-image.png`, `twitter-image.png` |
 | Title, description, canonical, Open Graph | `src/app/layout.tsx` |
 
+## Analytics
+
+[GoatCounter](https://www.goatcounter.com): cookie-free, so no consent banner, and about 4 KB. Dashboard: https://khleafsami.goatcounter.com
+
+- **Page views** are counted under `/portfolio/`, with the referrer and country.
+- **Clicks** on CV downloads, contact links and store links are events: `cv-hero`, `cv-nav`, `cv-contact`, `contact-email|whatsapp|linkedin|github`, `get-in-touch-hero`, `store-<app>-<store>`. Add one with `{...track("name")}` from `src/lib/analytics.ts`.
+- **Per-application links:** share `https://samikh94.github.io/portfolio/?ref=<company>` and the ref appears as the visit's source.
+- **Not counted:** localhost, bots, and any browser that has opened the site once with `#toggle-goatcounter` (do this on your own devices).
+- If the script is blocked (for example by an ad blocker), the page works exactly the same.
+
 ## Content rules
 
 The site, the CV and interviews must tell the same story:
