@@ -128,7 +128,7 @@ export default function Experience() {
                 </ul>
               )}
 
-              <StoreLinks links={job.links} />
+              <StoreLinks links={job.links} owner={job.company} />
             </li>
           ))}
         </ol>

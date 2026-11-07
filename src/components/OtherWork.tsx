@@ -58,7 +58,7 @@ export default function OtherWork() {
                     </li>
                   ))}
                 </ul>
-                <StoreLinks links={w.links} />
+                <StoreLinks links={w.links} owner={w.name} />
               </div>
             </li>
           ))}

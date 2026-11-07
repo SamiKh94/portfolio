@@ -1,4 +1,5 @@
 import { basePath, cvHref } from "@/lib/sections";
+import { track } from "@/lib/analytics";
 
 // Every figure here is on the CV. Do not add numbers that are not.
 const stats = [
@@ -78,6 +79,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-3 justify-center md:justify-start animate-slide-up animation-delay-400">
               <a
                 href={cvHref}
+                {...track("cv", "hero")}
                 download="Sami-Khleaf-CV.pdf"
                 className="px-6 py-3 rounded-xl font-semibold text-sm text-white transition-all hover:-translate-y-0.5"
                 style={{
@@ -89,6 +91,7 @@ export default function Hero() {
               </a>
               <a
                 href="#contact"
+                {...track("get-in-touch", "hero")}
                 className="px-6 py-3 rounded-xl font-semibold text-sm text-zinc-300 glass glass-hover hover:text-white transition-all hover:-translate-y-0.5"
               >
                 Get in touch →

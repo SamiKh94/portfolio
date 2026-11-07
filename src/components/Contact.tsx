@@ -1,5 +1,6 @@
 import SectionHeader from "@/components/SectionHeader";
 import { cvHref } from "@/lib/sections";
+import { track } from "@/lib/analytics";
 
 const links = [
   { label: "Email", value: "khleafsami@gmail.com", href: "mailto:khleafsami@gmail.com", color: "#a78bfa" },
@@ -28,6 +29,7 @@ export default function Contact() {
               <a
                 key={label}
                 href={href}
+                {...(label === "CV" ? track("cv", "contact") : track("contact", label))}
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
                 rel="noopener noreferrer"
                 className={`glass glass-hover rounded-2xl px-6 py-4 text-left group min-w-0${"wide" in link ? " sm:col-span-2" : ""}`}
